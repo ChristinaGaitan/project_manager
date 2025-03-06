@@ -38,7 +38,6 @@ gem "kamal", require: false
 gem "thruster", require: false
 
 gem "haml-rails"    # Para vistas con HAML
-gem "devise"        # Autenticación
 gem "sidekiq"       # Jobs en segundo plano
 gem "kaminari"      # Paginación
 

@@ -15,7 +15,6 @@
     - @projects.each do |project|
       %tr
         %td= project.name
-        %td= project.user
         %td= link_to 'Show', project
         %td= link_to 'Edit', edit_project_path(project)
         %td= link_to 'Destroy', project, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }
