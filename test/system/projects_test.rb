@@ -15,7 +15,6 @@ class ProjectsTest < ApplicationSystemTestCase
     click_on "New Project"
 
     fill_in "Name", with: @project.name
-    fill_in "User", with: @project.user_id
     click_on "Save"
 
     assert_text "Project was successfully created"
@@ -27,7 +26,6 @@ class ProjectsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Name", with: @project.name
-    fill_in "User", with: @project.user_id
     click_on "Save"
 
     assert_text "Project was successfully updated"
