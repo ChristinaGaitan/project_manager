@@ -23,7 +23,7 @@ RSpec.describe UsersController, type: :request do
       expect do
         post users_url, params: { user: { email: "other#@user.email", first_name: user.first_name, last_name: user.last_name } }
       end.to change(User, :count).by(1)
-      
+
       expect(response).to redirect_to(user_url(User.last))
     end
   end

@@ -67,7 +67,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 
-  gem 'rspec-rails'
-  gem 'factory_bot_rails'  # For creating test data (optional)
-  gem 'shoulda-matchers'    # For easier assertions (optional)
+  gem "rspec-rails"
+  gem "factory_bot_rails"  # For creating test data (optional)
+  gem "shoulda-matchers"    # For easier assertions (optional)
 end

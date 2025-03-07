@@ -23,7 +23,7 @@ RSpec.describe ProjectsController, type: :request do
       expect do
         post projects_url, params: { project: { name: project.name } }
       end.to change(Project, :count).by(1)
-      
+
       expect(response).to redirect_to(project_url(Project.last))
     end
   end
