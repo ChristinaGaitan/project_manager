@@ -3,9 +3,9 @@
 one:
   first_name: MyString
   last_name: MyString
-  email: MyString
+  email: on@test.com
 
 two:
   first_name: MyString
   last_name: MyString
-  email: MyString
+  email: two@test.com
