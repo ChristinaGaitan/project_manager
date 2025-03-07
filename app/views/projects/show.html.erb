@@ -1,0 +1,11 @@
+<p id="notice" class="text-green-500"><%= notice %></p>
+
+<p class="mb-4">
+  <b class="font-semibold">Name:</b> <%= @project.name %>
+</p>
+
+<div class="mt-4">
+  <%= link_to 'Edit', edit_project_path(@project), class: 'text-blue-500 hover:underline' %> |
+  <%= link_to 'Destroy', @project, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'text-red-500 hover:underline' %> |
+  <%= link_to 'Back', projects_path, class: 'text-blue-500 hover:underline' %>
+</div>
