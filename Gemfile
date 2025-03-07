@@ -37,7 +37,6 @@ gem "kamal", require: false
 # Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster/]
 gem "thruster", require: false
 
-gem "haml-rails"    # Para vistas con HAML
 gem "sidekiq"       # Jobs en segundo plano
 gem "kaminari"      # Paginación
 
@@ -71,3 +70,5 @@ group :test do
   gem "factory_bot_rails"  # For creating test data (optional)
   gem "shoulda-matchers"    # For easier assertions (optional)
 end
+
+gem "tailwindcss-rails", "~> 4.2"
