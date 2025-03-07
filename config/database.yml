@@ -83,6 +83,7 @@ production:
     <<: *default
     database: project_manager_production
     username: project_manager
+    url: <%= ENV["DATABASE_URL"] %>
     password: <%= ENV["PROJECT_MANAGER_DATABASE_PASSWORD"] %>
   cache:
     <<: *primary_production
