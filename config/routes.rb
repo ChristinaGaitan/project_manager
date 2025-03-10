@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  root "dashboard#index"
+
   resources :users
-  root "projects#index"
   resources :projects do
     member do
       delete "remove_user/:user_id", to: "projects#remove_user", as: :remove_user
