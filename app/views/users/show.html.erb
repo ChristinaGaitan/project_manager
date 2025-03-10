@@ -1,5 +1,7 @@
 <p id="notice" class="text-green-500"><%= notice %></p>
 
+<h1 class="text-3xl font-bold underline mb-4">User</h1>
+
 <p class="mb-2">
   <b class="font-semibold">First name:</b>
   <%= @user.first_name %>
@@ -20,3 +22,15 @@
   <%= link_to 'Destroy', @user, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'text-red-500 hover:underline' %> |
   <%= link_to 'Back', users_path, class: 'text-blue-500 hover:underline' %>
 </div>
+
+
+<hr class="my-4">
+
+<h2 class="text-3xl mb-4">Projects</h2>
+
+<ul>
+  <% @user.projects.each do |project| %>
+  <li><%= link_to project.name, project_path(project), class: 'text-blue-500 hover:underline' %></li>
+  <% end %>
+  <ul>
+

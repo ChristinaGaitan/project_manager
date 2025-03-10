@@ -7,6 +7,7 @@
   <thead class="bg-gray-100">
     <tr>
       <th class="px-4 py-2 text-left border-b border-gray-300">Name</th>
+      <th class="px-4 py-2 text-left border-b border-gray-300">Users</th>
       <th class="px-4 py-2 text-left border-b border-gray-300"></th>
       <th class="px-4 py-2 text-left border-b border-gray-300"></th>
       <th class="px-4 py-2 text-left border-b border-gray-300"></th>
@@ -17,6 +18,13 @@
     <% @projects.each do |project| %>
     <tr class="hover:bg-gray-50">
       <td class="px-4 py-2 border-b border-gray-300"><%= project.name %></td>
+      <td class="px-4 py-2 border-b border-gray-300">
+        <ul>
+          <% project.users.each do |user| %>
+          <li><%= link_to user.first_name, user_path(user), class: 'text-blue-500 hover:underline' %></li>
+          <% end %>
+          <ul>
+      </td>
       <td class="px-4 py-2 border-b border-gray-300"><%= link_to 'Show', project, class: 'text-blue-500 hover:underline' %></td>
       <td class="px-4 py-2 border-b border-gray-300"><%= link_to 'Edit', edit_project_path(project), class: 'text-blue-500 hover:underline' %></td>
       <td class="px-4 py-2 border-b border-gray-300"><%= link_to 'Destroy', project, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'text-red-500 hover:underline' %></td>
