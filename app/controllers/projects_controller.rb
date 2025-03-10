@@ -57,6 +57,15 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def remove_user
+    @project = Project.find(params[:id])
+    @user = User.find(params[:user_id])
+
+    @project.users.delete(@user)
+
+    redirect_to @project, notice: "#{@user.first_name} has been removed from the project."
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project
@@ -65,6 +74,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.expect(project: [ :name ])
+      params.expect(project: [ :name, user_ids: [] ])
     end
 end

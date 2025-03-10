@@ -18,8 +18,20 @@
 
 <h2 class="text-3xl mb-4">Users</h2>
 
-<ul>
-  <% @project.users.each do |user| %>
-  <li><%= link_to user.first_name, user_path(user), class: 'text-blue-500 hover:underline' %></li>
-  <% end %>
-<ul>
+<table class="min-w-full table-auto border-collapse border border-gray-200">
+  <thead class="bg-gray-100">
+    <tr>
+      <th class="px-4 py-2 text-left border-b border-gray-300">User</th>
+      <th class="px-4 py-2 text-left border-b border-gray-300"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @project.users.each do |user| %>
+    <tr class="hover:bg-gray-50">
+      <td class="px-4 py-2 border-b border-gray-300"><%= link_to user.first_name, user_path(user), class: 'text-blue-500 hover:underline' %></td>
+      <td class="px-4 py-2 border-b border-gray-300"><%= link_to 'Remove from project', remove_user_project_path(@project, user_id: user.id), class: 'text-blue-500 hover:underline', data: { turbo_method: :delete, confirm: "Are you sure you want to remove this user from the project?" } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

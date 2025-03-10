@@ -12,8 +12,12 @@
 
 <div class="field mb-4">
   <%= f.label :name, class: "block text-gray-700 font-medium" %>
-  <%= f.text_field :name, class: "mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" %>
+  <%= f.text_field :name, required: true, class: "mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" %>
 </div>
+
+<h2 class="text-3xl mb-4">Add user</h2>
+
+<%= f.select :user_ids, User.order("first_name ASC").pluck(:first_name, :id), { multiple: true}, { class: "block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" } %>
 
 <div class="actions">
   <%= f.submit 'Save', class: "bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500" %>

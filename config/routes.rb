@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   resources :users
   root "projects#index"
-  resources :projects
+  resources :projects do
+    member do
+      delete "remove_user/:user_id", to: "projects#remove_user", as: :remove_user
+    end
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
